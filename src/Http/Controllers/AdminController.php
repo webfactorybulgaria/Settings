@@ -3,7 +3,7 @@
 namespace TypiCMS\Modules\Settings\Http\Controllers;
 
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use Krucas\Notification\Facades\Notification;
 use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
 use TypiCMS\Modules\Settings\Repositories\SettingInterface;
@@ -16,25 +16,26 @@ class AdminController extends BaseAdminController
     }
 
     /**
-     * List models
-     * GET /admin/model.
+     * List models.
+     *
+     * @return \Illuminate\View\View
      */
     public function index()
     {
         $data = $this->repository->all();
 
         return view('settings::admin.index')
-            ->withData($data);
+            ->with(compact('data'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @return \Illuminate\Support\Facades\Redirect
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
     {
-        $data = Input::all();
+        $data = Request::all();
         $this->repository->store($data);
 
         return redirect()->route('admin.settings.index');
@@ -43,7 +44,7 @@ class AdminController extends BaseAdminController
     /**
      * Delete image.
      *
-     * @return void
+     * @return null
      */
     public function deleteImage()
     {
@@ -53,7 +54,7 @@ class AdminController extends BaseAdminController
     /**
      * Clear app cache.
      *
-     * @return \Illuminate\Support\Facades\Redirect
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function clearCache()
     {

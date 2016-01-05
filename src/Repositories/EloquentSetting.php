@@ -3,14 +3,14 @@
 namespace TypiCMS\Modules\Settings\Repositories;
 
 use Croppa;
-use DB;
 use Exception;
-use File;
-use FileUpload;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Input;
-use Log;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Request;
 use stdClass;
+use TypiCMS\Modules\Core\Facades\FileUpload;
 
 class EloquentSetting implements SettingInterface
 {
@@ -59,8 +59,8 @@ class EloquentSetting implements SettingInterface
             $data['image'] = null;
         }
 
-        if (Input::hasFile('image')) {
-            $file = FileUpload::handle(Input::file('image'), 'uploads/settings');
+        if (Request::hasFile('image')) {
+            $file = FileUpload::handle(Request::file('image'), 'uploads/settings');
             $data['image'] = $file['filename'];
         }
 
