@@ -1,6 +1,6 @@
 @section('js')
     <script src="{{ asset('js/admin/form.js') }}"></script>
-@stop
+@endsection
 
 <div class="row">
     <div class="form-group col-sm-12">
@@ -45,11 +45,11 @@
 @endif
 {!! BootForm::select(trans('validation.attributes.admin_locale'), 'admin_locale', array_combine($locales, $locales)) !!}
 {!! BootForm::text(trans('validation.attributes.google_analytics_code'), 'google_analytics_code') !!}
-<input type="hidden" name="lang_chooser" value="0">
+{!! BootForm::hidden('lang_chooser')->value(0) !!}
 @if (config('typicms.main_locale_in_url'))
     {!! BootForm::checkbox(trans('validation.attributes.lang_chooser'), 'lang_chooser') !!}
 @endif
-<input type="hidden" name="auth_public" value="0">
+{!! BootForm::hidden('auth_public')->value(0) !!}
 {!! BootForm::checkbox(trans('validation.attributes.auth_public'), 'auth_public') !!}
-<input type="hidden" name="register" value="0">
+{!! BootForm::hidden('register')->value(0) !!}
 {!! BootForm::checkbox(trans('validation.attributes.registration allowed'), 'register') !!}
