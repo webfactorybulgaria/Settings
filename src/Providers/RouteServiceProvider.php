@@ -32,6 +32,8 @@ class RouteServiceProvider extends ServiceProvider
             $router->get('admin/settings', ['as' => 'admin.settings.index', 'uses' => 'AdminController@index']);
             $router->post('admin/settings', ['as' => 'admin.settings.store', 'uses' => 'AdminController@store']);
             $router->get('admin/cache/clear', ['as' => 'cache.clear', 'uses' => 'AdminController@clearCache']);
+            $router->get('admin/artisan/configCache', ['as' => 'artisan.configCache', 'uses' => 'AdminController@configCache']);
+            $router->get('admin/artisan/dbMigrate', ['as' => 'artisan.dbMigrate', 'uses' => 'AdminController@dbMigrate']);
 
             /*
              * API routes
