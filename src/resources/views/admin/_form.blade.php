@@ -30,7 +30,7 @@
     {!! BootForm::hidden('image') !!}
     @if(isset($data->image) and $data->image)
     <div class="fieldset-preview">
-        <img class="img-responsive" src="/uploads/settings/{{ $data->image }}" alt="">
+        <img class="img-responsive" src="/uploads/settings/{{ $data->image }}" alt="" width="150">
         <small class="text-danger delete-attachment" data-table="settings" data-id="" data-field="image">Supprimer</small>
     </div>
     @endif
