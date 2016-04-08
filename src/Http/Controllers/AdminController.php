@@ -88,7 +88,7 @@ class AdminController extends BaseAdminController
      */
     public function dbMigrate()
     {
-        Artisan::call('migrate');
+        Artisan::call('migrate', ['--force' => true]);
         $output = Artisan::output();
         $output = str_replace("\n", "<br>", $output);
         Notification::success(trans('settings::global.Database migrated') . ' - ' . $output);
