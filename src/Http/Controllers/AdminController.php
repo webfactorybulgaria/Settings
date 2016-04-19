@@ -61,6 +61,7 @@ class AdminController extends BaseAdminController
     {
         Cache::flush();
         Artisan::call('config:clear');
+        Artisan::call('clear-html');
         Notification::success(trans('settings::global.Cache cleared').'.');
 
         return redirect()->route('admin.settings.index');
