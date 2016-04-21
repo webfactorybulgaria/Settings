@@ -43,7 +43,7 @@
 @if (! config('typicms.welcome_message_url'))
     {!! BootForm::textarea(trans('validation.attributes.welcome_message'), 'welcome_message') !!}
 @endif
-{!! BootForm::select(trans('validation.attributes.admin_locale'), 'admin_locale', array_combine($locales, $locales)) !!}
+{!! BootForm::select(trans('validation.attributes.admin_locale'), 'admin_locale', array_combine($admin_locales, $admin_locales)) !!}
 {!! BootForm::text(trans('validation.attributes.google_analytics_code'), 'google_analytics_code') !!}
 {!! BootForm::hidden('lang_chooser')->value(0) !!}
 @if (config('typicms.main_locale_in_url'))
