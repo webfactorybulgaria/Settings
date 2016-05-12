@@ -40,7 +40,7 @@ class CacheDecorator implements SettingInterface
      *
      * @return bool
      */
-    public function store(array $data)
+    public function store(array $data, array $syncTables = [])
     {
         $this->cache->flush();
 
