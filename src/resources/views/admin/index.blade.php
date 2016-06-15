@@ -23,10 +23,10 @@
 
         <div class="btn-group" role="group" aria-label="System functions">
             @if (config('typicms.cache'))
-                <a href="{{ route('cache.clear') }}" class="btn btn-default"><span class="fa fa-trash-o"></span> {{ trans('settings::global.Clear cache') }}</a>
+                <a href="{{ route('admin::clear-cache') }}" class="btn btn-default"><span class="fa fa-trash-o"></span> {{ trans('settings::global.Clear cache') }}</a>
             @endif
-            <a href="{{ route('artisan.configCache') }}" class="btn btn-default"><span class="fa fa-bolt"></span> {{ trans('settings::global.Cache config') }}</a>
-            <a href="{{ route('artisan.dbMigrate') }}" class="btn btn-default"><span class="fa fa-database"></span> {{ trans('settings::global.Migrate database') }}</a>
+            <a href="{{ route('admin::artisan-configCache') }}" class="btn btn-default"><span class="fa fa-bolt"></span> {{ trans('settings::global.Cache config') }}</a>
+            <a href="{{ route('admin::artisan-dbMigrate') }}" class="btn btn-default"><span class="fa fa-database"></span> {{ trans('settings::global.Migrate database') }}</a>
         </div>
 
         <table class="table table-condensed">
