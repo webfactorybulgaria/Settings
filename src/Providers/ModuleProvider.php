@@ -5,10 +5,10 @@ namespace TypiCMS\Modules\Settings\Providers;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Settings;
-use TypiCMS\Modules\Core\Custom\Services\Cache\LaravelCache;
-use TypiCMS\Modules\Settings\Custom\Models\Setting;
-use TypiCMS\Modules\Settings\Custom\Repositories\CacheDecorator;
-use TypiCMS\Modules\Settings\Custom\Repositories\EloquentSetting;
+use TypiCMS\Modules\Core\Shells\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Settings\Shells\Models\Setting;
+use TypiCMS\Modules\Settings\Shells\Repositories\CacheDecorator;
+use TypiCMS\Modules\Settings\Shells\Repositories\EloquentSetting;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class ModuleProvider extends ServiceProvider
         /*
          * Get configuration from DB and store it in the container
          */
-        $TypiCMSConfig = $this->app->make('TypiCMS\Modules\Settings\Custom\Repositories\SettingInterface')
+        $TypiCMSConfig = $this->app->make('TypiCMS\Modules\Settings\Shells\Repositories\SettingInterface')
             ->allToArray();
 
         // merge config
@@ -42,9 +42,9 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Settings\Custom\Providers\RouteServiceProvider');
+        $app->register('TypiCMS\Modules\Settings\Shells\Providers\RouteServiceProvider');
 
-        $app->bind('TypiCMS\Modules\Settings\Custom\Repositories\SettingInterface', function (Application $app) {
+        $app->bind('TypiCMS\Modules\Settings\Shells\Repositories\SettingInterface', function (Application $app) {
             $repository = new EloquentSetting(new Setting());
             if (!config('typicms.cache')) {
                 return $repository;

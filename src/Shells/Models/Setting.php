@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Settings\Custom\Models;
+namespace TypiCMS\Modules\Settings\Shells\Models;
 
 use TypiCMS\Modules\Settings\Models\Setting as Base;
 

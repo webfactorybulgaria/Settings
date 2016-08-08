@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Settings\Repositories;
 
-use TypiCMS\Modules\Core\Custom\Services\Cache\CacheInterface;
+use TypiCMS\Modules\Core\Shells\Services\Cache\CacheInterface;
 
 class CacheDecorator implements SettingInterface
 {

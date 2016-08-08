@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 use stdClass;
-use TypiCMS\Modules\Core\Custom\Facades\FileUpload;
+use TypiCMS\Modules\Core\Shells\Facades\FileUpload;
 
 class EloquentSetting implements SettingInterface
 {
