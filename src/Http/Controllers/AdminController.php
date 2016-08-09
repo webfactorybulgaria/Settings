@@ -37,6 +37,7 @@ class AdminController extends BaseAdminController
     public function store()
     {
         $data = Request::all();
+
         $this->repository->store($data);
 
         return redirect()->route('admin::index-settings');

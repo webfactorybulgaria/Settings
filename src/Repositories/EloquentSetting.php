@@ -53,7 +53,7 @@ class EloquentSetting implements SettingInterface
      */
     public function store(array $data)
     {
-        if ($data['image'] == 'delete') {
+        if (!empty($data['image']) && $data['image'] == 'delete') {
             $data['image'] = null;
         }
 

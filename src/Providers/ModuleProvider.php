@@ -22,7 +22,7 @@ class ModuleProvider extends ServiceProvider
 
         // merge config
         $config = $this->app['config']->get('typicms', []);
-        $this->app['config']->set('typicms', array_merge($TypiCMSConfig, $config));
+        $this->app['config']->set('typicms', array_merge_recursive($TypiCMSConfig, $config));
 
         $this->loadViewsFrom(__DIR__.'/../resources/views/', 'settings');
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'settings');
