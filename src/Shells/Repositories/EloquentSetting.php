@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Settings\Shells\Repositories;
 
-use TypiCMS\Modules\Settings\Repositories\EloquentSetting as Base;
+use TypiCMS\Modules\Settings\Repositories\EloquentSetting as BaseClass;
 
-class EloquentSetting extends Base implements SettingInterface
+class EloquentSetting extends BaseClass implements SettingInterface
 {
 
 }

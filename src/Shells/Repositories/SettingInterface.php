@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Settings\Shells\Repositories;
 
-use TypiCMS\Modules\Settings\Repositories\SettingInterface as Base;
+use TypiCMS\Modules\Settings\Repositories\SettingInterface as BaseInterface;
 
-interface SettingInterface extends Base
+interface SettingInterface extends BaseInterface
 {
 
 }

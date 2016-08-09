@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Settings\Shells\Models;
 
-use TypiCMS\Modules\Settings\Models\Setting as Base;
+use TypiCMS\Modules\Settings\Models\Setting as BaseClass;
 
-class Setting extends Base
+class Setting extends BaseClass
 {
 
 }
