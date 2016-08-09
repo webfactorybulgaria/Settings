@@ -5,8 +5,8 @@ namespace TypiCMS\Modules\Settings\Http\Controllers;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Request;
 use Krucas\Notification\Facades\Notification;
-use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
-use TypiCMS\Modules\Settings\Repositories\SettingInterface;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BaseAdminController;
+use TypiCMS\Modules\Settings\Shells\Repositories\SettingInterface;
 use Artisan;
 
 class AdminController extends BaseAdminController
