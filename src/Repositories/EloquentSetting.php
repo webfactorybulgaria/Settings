@@ -28,7 +28,7 @@ class EloquentSetting implements SettingInterface
     {
         $data = new stdClass();
         foreach ($this->model->get() as $model) {
-            $value = is_numeric($model->value) ? (int) $model->value : $model->value;
+            $value = is_numeric($model->value) ? (float) $model->value : $model->value;
             $group_name = $model->group_name;
             $key_name = $model->key_name;
             if ($group_name != 'config') {
