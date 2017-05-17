@@ -2,8 +2,8 @@
 
 namespace TypiCMS\Modules\Settings\Providers;
 
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
+use TypiCMS\Modules\Core\Shells\Providers\BaseRouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -33,7 +33,7 @@ class RouteServiceProvider extends ServiceProvider
             $router->get('admin/settings', 'AdminController@index')->name('admin::index-settings');
             $router->post('admin/settings', 'AdminController@store')->name('admin::store-setting');
             $router->get('admin/cache/clear', 'AdminController@clearCache')->name('admin::clear-cache');
-            
+
             $router->get('admin/artisan/configCache', 'AdminController@configCache')->name('admin::artisan-configCache');
             $router->get('admin/artisan/dbMigrate', 'AdminController@dbMigrate')->name('admin::artisan-dbMigrate');
 
